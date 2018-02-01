@@ -44,7 +44,7 @@ namespace NearestPlaces.Controllers
 
             var coordinate = $"{sCoord.Latitude},{sCoord.Longitude}";
 
-            var urlPlaces = $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={coordinate}&radius=500&name=cruise&key=AIzaSyBFbOuj_JGMsSg8lZJ0J7hFeIz0vYTqdcA";
+            var urlPlaces = $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={coordinate}&radius=500&key=AIzaSyBFbOuj_JGMsSg8lZJ0J7hFeIz0vYTqdcA";
 
             request = WebRequest.Create(urlPlaces);
             webResponse = request.GetResponse();
@@ -65,6 +65,7 @@ namespace NearestPlaces.Controllers
             }
             db.SaveChanges();
             stream.Close();
+
         }
     }
 }
