@@ -62,10 +62,9 @@ namespace NearestPlaces.Controllers
                 var eCoord = new GeoCoordinate((double)coordinatePlaceData.First.Last, (double)coordinatePlaceData.Last.Last);
 
                 db.Places.Add(new Place { Name = placeData.ToList()[3].Last.ToString(), Coordinates = $"{eCoord.Latitude},{eCoord.Longitude}", Distance = sCoord.GetDistanceTo(eCoord) });
-                db.SaveChanges();
             }
-            return;
-
+            db.SaveChanges();
+            stream.Close();
         }
     }
 }
